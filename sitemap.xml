@@ -1,16 +1,41 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!--  created with sitemap generator https://octopus.do  -->
 
-
-<url>
-  <loc>https://xiaomi-noticias.netlify.app/</loc>
-  <lastmod>2024-12-17T03:52:53+00:00</lastmod>
-</url>
-
-
+    <url>
+        <loc>https://xiaomi-noticias.netlify.app/</loc>
+        <lastmod>2024-12-17</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://xiaomi-noticias.netlify.app//información-del-mundo-xiaomi</loc>
+        <lastmod>2024-12-17</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://xiaomi-noticias.netlify.app//las-últimas-noticias-y-actualizaciones-sobre-dispositivos-xiaomi-con-hyperos.</loc>
+        <lastmod>2024-12-17</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://xiaomi-noticias.netlify.app//móviles-xiaomi-con-android-15-y-hyperos-2.0:-todo-lo-que-necesitas-saber</loc>
+        <lastmod>2024-12-17</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://xiaomi-noticias.netlify.app//información-del-mundo-xiaomi</loc>
+        <lastmod>2024-12-17</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
+    <url>
+        <loc>https://xiaomi-noticias.netlify.app//las-últimas-noticias-y-actualizaciones-sobre-dispositivos-xiaomi-con-hyperos.</loc>
+        <lastmod>2024-12-17</lastmod>
+        <changefreq>always</changefreq>
+        <priority>0.5</priority>
+    </url>
 </urlset>
