@@ -44,7 +44,7 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('/IMG/Logo.jpg'); /* Reemplaza con la ruta de tu imagen */
+    background-image: url('IMG/Logo.jpg'); /* Reemplaza con la ruta de tu imagen */
     background-size: cover;
     background-position: center;
     filter: blur(8px); /* Ajusta el valor para cambiar el nivel de desenfoque */
