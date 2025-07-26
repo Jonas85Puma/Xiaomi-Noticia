@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://xiaomi-noticias.netlify.app/sitemap.xml
+
+# Disallow crawling of admin or private directories (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow crawling of all content for better indexing
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+
+# Crawl delay (optional, helps prevent server overload)
+Crawl-delay: 1
