@@ -84,6 +84,12 @@ header nav {
     color: white;
 }
 
+.titleAbout{
+    color: white;
+}
+
+
+
 .nav-menu a {
     text-decoration: none;
     color: var(--text-color);
@@ -2378,4 +2384,6 @@ main {
         margin: auto; /* Elimina el margen en pantallas pequeñas */
     }
 }
+
+
 
