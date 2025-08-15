@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;800&display=swap');
 
 :root {
-    --background-color: #f9f9f9;
-    --text-color: #333;
-    --primary-color: #ff6347; /* Tomate */
-    --secondary-color: #555; /* Gris oscuro */
-    --footer-background-color: #f1f1f1;
-    --footer-text-color: #333;
-    --section-background-color: rgba(0, 0, 0, 0); /* Color de fondo con transparencia */
-    --section-background-color-dark: rgba(18, 18, 18, 0.8); /* Color de fondo con transparencia para modo oscuro */
+    --background-color: #ffffff;
+    --text-color: #212529; /* Mejorado para contraste 4.5:1 */
+    --primary-color: #dc3545; /* Rojo más oscuro para mejor contraste */
+    --secondary-color: #495057; /* Gris más oscuro para contraste 4.5:1 */
+    --footer-background-color: #f8f9fa;
+    --footer-text-color: #212529;
+    --section-background-color: rgba(0, 0, 0, 0);
+    --section-background-color-dark: rgba(18, 18, 18, 0.8);
 }
 
 body.dark-mode {
@@ -78,6 +78,10 @@ header nav {
     display: flex;
     list-style: none;
     gap: 2rem;
+}
+
+.parrafo{
+    color: white;
 }
 
 .nav-menu a {
@@ -764,7 +768,7 @@ footer {
 
 .intro-text {
     font-size: 1.1rem;
-    color: var(--secondary-color);
+    color: white;;
     margin: 1rem 0 2rem 0;
     text-align: center;
 }
@@ -2374,3 +2378,4 @@ main {
         margin: auto; /* Elimina el margen en pantallas pequeñas */
     }
 }
+
