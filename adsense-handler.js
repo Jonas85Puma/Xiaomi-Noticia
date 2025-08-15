@@ -93,7 +93,7 @@
             const clientId = adElement.getAttribute('data-ad-client');
             const slotId = adElement.getAttribute('data-ad-slot');
             
-            if (!clientId || clientId === 'ca-pub-2706305242875973') {
+            if (!clientId || clientId === 'ca-pub-XXXXXXXXXX') {
                 console.warn(`⚠️ Anuncio ${index + 1}: data-ad-client no configurado o usando valor de ejemplo`);
                 isValid = false;
             }
