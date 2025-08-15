@@ -10,13 +10,25 @@
     <meta name="author" content="Xiaomi Noticias">
 
     <title>Xiaomi Noticias - Información del mundo Xiaomi y HyperOS</title>
-    <link rel="stylesheet" href="Style.css">
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2706305242875973"
-        crossorigin="anonymous"></script>
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-</script>
+    
+    <!-- CSS Crítico Inline -->
+    <style>
+        /* CSS Crítico - Above the fold */
+        @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;400;600;800&display=swap');
+        :root{--background-color:#f9f9f9;--text-color:#333;--primary-color:#ff6347;--secondary-color:#555}body.dark-mode{--background-color:#0d1117;--text-color:#f0f6fc;--secondary-color:#8b949e}*{margin:0;padding:0;box-sizing:border-box;font-family:'Nunito Sans'}body{display:flex;flex-direction:column;align-items:center;background-color:var(--background-color);color:var(--text-color);transition:background-color .3s,color .3s;min-width:320px;position:relative;overflow-x:hidden}header nav{background:rgba(255,255,255,.95);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,0,0,.1);position:fixed;top:0;left:0;right:0;z-index:1000;transition:all .3s ease}.nav-container{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;padding:1rem 2rem}.logo a{font-size:1.5rem;font-weight:bold;color:var(--primary-color);text-decoration:none;transition:color .3s ease}.nav-menu{display:flex;list-style:none;gap:2rem}.nav-menu a{text-decoration:none;color:var(--text-color);font-weight:500;padding:.5rem 1rem;border-radius:5px;transition:all .3s ease}.nav-menu a:hover,.nav-menu a.active{background:var(--primary-color);color:white}.hamburger{display:none;flex-direction:column;cursor:pointer;padding:.5rem}.hamburger span{width:25px;height:3px;background:var(--text-color);margin:3px 0;transition:.3s;border-radius:2px}main{margin-top:80px;width:100%;max-width:1200px;padding:0 1rem}#welcome-section{text-align:center;padding:3rem 1rem;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;border-radius:15px;margin:2rem 0;box-shadow:0 10px 30px rgba(0,0,0,.2)}#welcome-section h1{font-size:3rem;margin-bottom:1rem;background:linear-gradient(45deg,#ff6b6b,#feca57,#48dbfb,#ff9ff3);background-size:300% 300%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gradientShift 3s ease-in-out infinite}@keyframes gradientShift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}@media (max-width:768px){.hamburger{display:flex}.nav-menu{position:fixed;left:-100%;top:70px;flex-direction:column;background-color:rgba(255,255,255,.98);width:100%;text-align:center;transition:.3s;box-shadow:0 10px 27px rgba(0,0,0,.05);backdrop-filter:blur(10px);padding:2rem 0;gap:0}.nav-menu.active{left:0}.nav-menu a{padding:1rem;display:block;margin:.5rem 1rem}#welcome-section h1{font-size:2rem}.nav-container{padding:1rem}}
+    </style>
+    
+    <!-- CSS No Crítico - Carga Asíncrona -->
+    <link rel="preload" href="Style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="Style.css"></noscript>
+    
+    <!-- DataTables CSS - Carga Diferida -->
+    <link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css"></noscript>
+    
+    <!-- AdSense - Async -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2706305242875973" crossorigin="anonymous"></script>
+    <script async custom-element="amp-auto-ads" src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js"></script>
 </head>
 <body>
     <amp-auto-ads type="adsense"
@@ -50,7 +62,7 @@
         <section id="welcome-section">
             <h1>Móviles Xiaomi con Android 15 y HyperOS 2.0: Todo lo que necesitas saber</h1>
             <p class="intro-text">Bienvenido a tu fuente confiable de información sobre el ecosistema Xiaomi. Descubre las últimas novedades sobre HyperOS 2.0, Android 15, y todos los dispositivos de las marcas Xiaomi, Redmi y POCO.</p>
-            <p> HyperOS 2 es la mayor actualización que ha lanzado Xiaomi a lo largo de toda su historia. Si bien es cierto que a nivel de diseño no trae muchos cambios (algo que sí que podemos notar en otros sistemas operativos)</p>
+            <p class="parrafo"> HyperOS 2 es la mayor actualización que ha lanzado Xiaomi a lo largo de toda su historia. Si bien es cierto que a nivel de diseño no trae muchos cambios (algo que sí que podemos notar en otros sistemas operativos)</p>
         </section>
         
         <div class="container">
@@ -90,7 +102,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14</p>
-                                        <img src="IMG/Xiaomi 14.png" alt="Xiaomi 14">
+                                        <img src="IMG/Xiaomi 14.png" alt="Xiaomi 14" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -98,7 +110,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14-ultra/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14 Ultra</p>
-                                        <img src="IMG/Xiaomi 14 ultra.png" alt="Xiaomi 14 Ultra">
+                                        <img src="IMG/Xiaomi 14 ultra.png" alt="Xiaomi 14 Ultra" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -106,7 +118,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14t/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14T</p>
-                                        <img src="IMG/Xiaomi 14T.jpg" alt="Xiaomi 14T">
+                                        <img src="IMG/Xiaomi 14T.jpg" alt="Xiaomi 14T" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -114,7 +126,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14t-pro/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14T Pro</p>
-                                        <img src="IMG/Xiaomi 14T pro.png" alt="Xiaomi 14T Pro">
+                                        <img src="IMG/Xiaomi 14T pro.png" alt="Xiaomi 14T Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -126,7 +138,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-13/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 13</p>
-                                        <img src="IMG/Xiaomi 13.png" alt="Xiaomi 13">
+                                        <img src="IMG/Xiaomi 13.png" alt="Xiaomi 13" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -134,7 +146,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-13-pro/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 13 Pro</p>
-                                        <img src="IMG/Xiaomi 13 pro.png" alt="Xiaomi 13 Pro">
+                                        <img src="IMG/Xiaomi 13 pro.png" alt="Xiaomi 13 Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -142,7 +154,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-13-ultra/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 13 Ultra</p>
-                                        <img src="IMG/Xiaomi 13 ultra.png" alt="Xiaomi 13 Ultra">
+                                        <img src="IMG/Xiaomi 13 ultra.png" alt="Xiaomi 13 Ultra" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -150,7 +162,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-13t-pro-leica/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 13T Pro</p>
-                                        <img src="IMG/Xiaomi 13T pro.png" alt="Xiaomi 13T Pro">
+                                        <img src="IMG/Xiaomi 13T pro.png" alt="Xiaomi 13T Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -158,7 +170,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-13t-leica/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 13T</p>
-                                        <img src="IMG/Xiami 13T.png" alt="Xiaomi 13T">
+                                        <img src="IMG/Xiami 13T.png" alt="Xiaomi 13T" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -170,7 +182,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-12-pro/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 12 Pro</p>
-                                        <img src="IMG/Xiaomi 12 pro.jpg" alt="Xiaomi 12 Pro">
+                                        <img src="IMG/Xiaomi 12 pro.jpg" alt="Xiaomi 12 Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -178,7 +190,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-12/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 12</p>
-                                        <img src="IMG/Xiaomi 12.png" alt="Xiaomi 12">
+                                        <img src="IMG/Xiaomi 12.png" alt="Xiaomi 12" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -186,7 +198,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-12t-pro/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 12T Pro</p>
-                                        <img src="IMG/Xiaomi 12t pro.png" alt="Xiaomi 12T Pro">
+                                        <img src="IMG/Xiaomi 12t pro.png" alt="Xiaomi 12T Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -194,7 +206,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-12t/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 12T</p>
-                                        <img src="IMG/Xiaomi 12t.png" alt="Xiaomi 12T">
+                                        <img src="IMG/Xiaomi 12t.png" alt="Xiaomi 12T" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -206,7 +218,7 @@
                                 <a href="https://www.mi.com/global/product/redmi-note-13-pro-plus-5g/" target="_blank">
                                     <div class="device">
                                         <p>Redmi Note 13 Pro+ 5G</p>
-                                        <img src="IMG/Redmi note 13 pro+.png" alt="Redmi Note 13 Pro+ 5G">
+                                        <img src="IMG/Redmi note 13 pro+.png" alt="Redmi Note 13 Pro+ 5G" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -214,7 +226,7 @@
                                 <a href="https://www.mi.com/global/product/redmi-note-13-pro-5g/" target="_blank">
                                     <div class="device">
                                         <p>Redmi Note 13 Pro 5G</p>
-                                        <img src="IMG/Redmi note 13 pro 5g.png" alt="Redmi Note 13 Pro 5G">
+                                        <img src="IMG/Redmi note 13 pro 5g.png" alt="Redmi Note 13 Pro 5G" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -222,7 +234,7 @@
                                 <a href="https://www.mi.com/global/product/redmi-note-13-pro/" target="_blank">
                                     <div class="device">
                                         <p>Redmi Note 13 Pro</p>
-                                        <img src="IMG/Redmi note 13 pro.png" alt="Redmi Note 13 Pro">
+                                        <img src="IMG/Redmi note 13 pro.png" alt="Redmi Note 13 Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -230,7 +242,7 @@
                                 <a href="https://www.mi.com/global/product/redmi-note-13/" target="_blank">
                                     <div class="device">
                                         <p>Redmi Note 13</p>
-                                        <img src="IMG/Redmi note 13.png" alt="Redmi Note 13">
+                                        <img src="IMG/Redmi note 13.png" alt="Redmi Note 13" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -242,7 +254,7 @@
                                 <a href="https://www.mi.com/global/product/poco-f6-pro/" target="_blank">
                                     <div class="device">
                                         <p>POCO F6 Pro</p>
-                                        <img src="IMG/Poco f6 pro.jpg" alt="POCO F6 Pro">
+                                        <img src="IMG/Poco f6 pro.jpg" alt="POCO F6 Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -250,7 +262,7 @@
                                 <a href="https://www.mi.com/global/product/poco-f6/" target="_blank">
                                     <div class="device">
                                         <p>POCO F6</p>
-                                        <img src="IMG/Poco f6.png" alt="POCO F6">
+                                        <img src="IMG/Poco f6.png" alt="POCO F6" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -258,7 +270,7 @@
                                 <a href="https://www.mi.com/global/product/poco-x6-pro/" target="_blank">
                                     <div class="device">
                                         <p>POCO X6 Pro</p>
-                                        <img src="IMG/Poco x6 pro.png" alt="POCO X6 Pro">
+                                        <img src="IMG/Poco x6 pro.png" alt="POCO X6 Pro" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -266,7 +278,7 @@
                                 <a href="https://www.mi.com/global/product/poco-x6/" target="_blank">
                                     <div class="device">
                                         <p>POCO X6</p>
-                                        <img src="IMG/Poco x6.png" alt="POCO X6">
+                                        <img src="IMG/Poco x6.png" alt="POCO X6" loading="lazy" decoding="async">
                                     </div>
                                 </a>
                             </li>
@@ -301,30 +313,30 @@
                         <p>Estas actualizaciones no solo se enfocan en el rendimiento, sino también en la experiencia visual, la fotografía y la duración de la batería, aspectos clave que los consumidores valoran altamente.</p>
                         <h3>Comparativa: HyperOS 2.0 vs HyperOS 1.0 y Android 15 vs Android 14</h3>
                         <p>Con la llegada de HyperOS 2.0 y Android 15, Xiaomi y Google buscan redefinir el rendimiento y la experiencia del usuario en sus dispositivos móviles. A continuación, analizamos cómo estas actualizaciones mejoran frente a sus versiones anteriores en términos de funcionalidad, rendimiento y características.</p>
-                        <h4>HyperOS 2.0 vs HyperOS 1.0</h4>
-                        <h5>1. Rendimiento General</h5>
+                        <h3>HyperOS 2.0 vs HyperOS 1.0</h3>
+                        <h4>1. Rendimiento General</h4>
                         <p><strong>Velocidad de Interfaz:</strong> HyperOS 2.0 ofrece transiciones más rápidas y animaciones optimizadas, reduciendo significativamente los tiempos de carga en comparación con HyperOS 1.0. Esto se debe a la reestructuración del núcleo del sistema operativo para aprovechar mejor los recursos del hardware.</p>
                         <p><strong>Consumo de RAM:</strong> Se ha logrado una reducción del uso de memoria RAM del sistema base, liberando más recursos para aplicaciones exigentes y multitarea. Esto resulta especialmente beneficioso en dispositivos de gama media con menor capacidad de memoria.</p>
-                        <h5>2. Experiencia de Usuario</h5>
+                        <h4>2. Experiencia de Usuario</h4>
                         <p><strong>Centro de Control:</strong> En HyperOS 2.0, el rediseño del centro de control no solo mejora la estética, sino que también acelera la accesibilidad a funciones esenciales, superando el diseño más estático y menos intuitivo de la versión 1.0.</p>
                         <p><strong>Nuevas Opciones de Personalización:</strong> Mientras que HyperOS 1.0 ofrecía temas básicos y limitadas opciones de personalización, la nueva versión amplía las posibilidades con widgets dinámicos y ajustes profundos en la apariencia del sistema.</p>
-                        <h5>3. Fotografía y Multimedia</h5>
+                        <h4>3. Fotografía y Multimedia</h4>
                         <p><strong>Inteligencia Artificial:</strong> HyperOS 2.0 integra modelos más avanzados de IA para la mejora de imágenes y vídeos en tiempo real, logrando resultados notablemente superiores en comparación con la versión 1.0.</p>
                         <p><strong>Efectos Cinemáticos:</strong> Una novedad exclusiva de la nueva versión es la posibilidad de crear efectos de vídeo cinematográficos directamente desde la galería, algo ausente en la versión previa.</p>
-                        <h5>4. Optimización de Recursos</h5>
+                        <h4>4. Optimización de Recursos</h4>
                         <p><strong>Duración de la Batería:</strong> Gracias a la optimización avanzada, HyperOS 2.0 extiende hasta en un 15% la duración de la batería en condiciones de uso intensivo, frente a HyperOS 1.0.</p>
                         <p><strong>Gestión Térmica:</strong> Se ha mejorado la disipación de calor en dispositivos de gama alta, reduciendo los problemas de sobrecalentamiento en sesiones prolongadas de uso intensivo.</p>
-                        <h4>Android 15 vs Android 14</h4>
-                        <h5>1. Seguridad y Privacidad</h5>
+                        <h3>Android 15 vs Android 14</h3>
+                        <h4>1. Seguridad y Privacidad</h4>
                         <p><strong>Mejoras en Privacidad:</strong> Android 15 introduce controles más avanzados para la gestión de permisos, permitiendo a los usuarios otorgar permisos temporales a aplicaciones. Android 14 ofrecía permisos más generales sin tanta flexibilidad.</p>
                         <p><strong>Actualizaciones de Seguridad Independientes:</strong> Ahora, los parches de seguridad se pueden instalar en segundo plano, lo que garantiza una protección más continua y sin interrupciones.</p>
-                        <h5>2. Experiencia del Usuario</h5>
+                        <h4>2. Experiencia del Usuario</h4>
                         <p><strong>Interfaz Mejorada:</strong> Android 15 presenta un diseño más fluido con Material You, permitiendo una mayor personalización visual en comparación con Android 14. La adaptación dinámica de colores y temas es ahora más precisa y abarca más aplicaciones del sistema y de terceros.</p>
                         <p><strong>Mejor Integración con Dispositivos IoT:</strong> Android 15 mejora la conectividad con dispositivos inteligentes, permitiendo controles más avanzados directamente desde el sistema operativo.</p>
-                        <h5>3. Rendimiento y Eficiencia</h5>
+                        <h4>3. Rendimiento y Eficiencia</h4>
                         <p><strong>Optimización para Procesadores Modernos:</strong> Android 15 aprovecha mejor los núcleos de alto rendimiento de procesadores recientes, mostrando una mejora del 10-20% en la velocidad de ejecución de aplicaciones frente a Android 14.</p>
                         <p><strong>Consumo Energético:</strong> La optimización del sistema reduce el consumo energético en tareas en segundo plano, prolongando la duración de la batería.</p>
-                        <h5>4. Multitarea y Productividad</h5>
+                        <h4>4. Multitarea y Productividad</h4>
                         <p><strong>Ventanas Flotantes y Pantalla Dividida Mejoradas:</strong> En Android 15, las ventanas flotantes y la pantalla dividida permiten una interacción más fluida entre aplicaciones, mientras que en Android 14 esta función era más básica y con ciertas limitaciones en el redimensionamiento.</p>
                         <p><strong>Gestión Avanzada de Notificaciones:</strong> Las notificaciones son ahora más interactivas, permitiendo responder directamente a mensajes o realizar acciones sin necesidad de abrir las aplicaciones.</p>
                         <h3>Conclusión: Qué esperar con HyperOS 2.0 y Android 15</h3>
@@ -478,10 +490,10 @@
                         <p><strong>Diseño y Materiales:</strong> Incorporación de aleaciones de titanio grado aeroespacial y acabados cerámicos nanotexturizados, mejorando resistencia, ligereza y propiedades antibacterianas.</p>
                         <h3>1. Cámaras</h3>
                         <h4>Apertura y Sensores</h4>
-                        <h5>Apertura del Diafragma:</h5>
+                        <p><strong>Apertura del Diafragma:</strong></p>
                         <p><strong>2018:</strong> Aperturas de f/1.8 eran comunes, permitiendo una cantidad moderada de luz. Esto era suficiente para escenarios generales, aunque limitado en condiciones de poca iluminación.</p>
                         <p><strong>2023-2024:</strong> Aperturas más amplias como f/1.7 y f/1.5 mejoran significativamente las fotos nocturnas al capturar más luz, logrando mejor detalle en sombras y un efecto bokeh más pronunciado en retratos.</p>
-                        <h5>Sensores:</h5>
+                        <p><strong>Sensores:</strong></p>
                         <p><strong>2018:</strong> Sensores de 12 MP eran estándar, ofreciendo buena calidad, pero limitados en recorte y zoom.</p>
                         <p><strong>2023-2024:</strong> Sensores avanzados de hasta 200 MP, como el Samsung HP2, no solo aumentan la resolución sino que optimizan el rendimiento con tecnologías como Pixel Binning. Esto permite combinar píxeles pequeños para capturar más luz, mejorando la calidad en fotos nocturnas y con poca iluminación.</p>
                         <h4>Estabilización</h4>
@@ -496,12 +508,12 @@
                         <p><strong>2024:</strong> Grabación en 8K a 60 fps con HDR10+ en tiempo real, logrando una calidad cinematográfica.</p>
                         <h3>2. Pantallas y Resistencia</h3>
                         <h4>Calidad de Pantalla</h4>
-                        <h5>Frecuencia de Refresco:</h5>
+                        <p><strong>Frecuencia de Refresco:</strong></p>
                         <p><strong>2018:</strong> 60 Hz, adecuado para tareas cotidianas.</p>
                         <p><strong>2020:</strong> 90 Hz para una experiencia más fluida en navegación y desplazamientos.</p>
                         <p><strong>2022:</strong> 120 Hz, estándar en gamas altas, ideal para gaming y desplazamientos rápidos.</p>
                         <p><strong>2024:</strong> 144 Hz, ultra fluido, especialmente para juegos competitivos.</p>
-                        <h5>Resolución y HDR:</h5>
+                        <p><strong>Resolución y HDR:</strong></p>
                         <p><strong>2018:</strong> Pantallas con HDR10, ofreciendo buen rango dinámico.</p>
                         <p><strong>2021-2024:</strong> HDR10+ y Dolby Vision introducen colores más vivos y mejor contraste, optimizados para contenido en streaming. Resoluciones alcanzan 2K (1440p) y 4K en modelos premium.</p>
                         <h4>Materiales de Pantalla</h4>
@@ -630,43 +642,47 @@
         </div>
         <button id="toggle-dark-mode">Modo noche / Día</button>
     </footer>
-    <script async custom-element="amp-auto-ads"
-        src="https://cdn.ampproject.org/v0/amp-auto-ads-0.1.js">
-    </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2706305242875973"
-        crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+    <!-- Scripts de AdSense ya cargados en el head -->
+    <!-- Scripts optimizados con defer/async -->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script defer src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+    <script defer src="Dar-mode.js"></script>
+    <script defer src="comments.js"></script>
+    <script defer src="adsense-handler.js"></script>
+    
+    <!-- Scripts inline optimizados -->
     <script>
-                    document.addEventListener("DOMContentLoaded", function() {
-            const devices = document.querySelectorAll('.device');
-
-            devices.forEach(device => {
-                const img = device.querySelector('img');
-                img.onload = function() {
-                    const colorThief = new ColorThief();
-                    const color = colorThief.getColor(img);
-                    device.style.background = `linear-gradient(45deg, rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.5), rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.5))`;
-                };
-            });
-        });
+        // Optimización: Usar requestIdleCallback para tareas no críticas
+        function initializeNonCriticalFeatures() {
+            // DataTables initialization
+            if (typeof $ !== 'undefined' && $.fn.DataTable) {
+                $('#myTable, #myTable2').DataTable();
+            }
+            
+            // Color Thief para dispositivos
+            if (typeof ColorThief !== 'undefined') {
+                const devices = document.querySelectorAll('.device');
+                devices.forEach(device => {
+                    const img = device.querySelector('img');
+                    if (img) {
+                        img.onload = function() {
+                            const colorThief = new ColorThief();
+                            const color = colorThief.getColor(img);
+                            device.style.background = `linear-gradient(45deg, rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.5), rgba(${color[0]}, ${color[1]}, ${color[2]}, 0.5))`;
+                        };
+                    }
+                });
+            }
+        }
+        
+        // Usar requestIdleCallback o setTimeout como fallback
+        if ('requestIdleCallback' in window) {
+            requestIdleCallback(initializeNonCriticalFeatures);
+        } else {
+            setTimeout(initializeNonCriticalFeatures, 100);
+        }
     </script>
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <!-- DataTables JS -->
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('#myTable').DataTable();
-        });
-        $(document).ready(function() {
-            $('#myTable2').DataTable();
-        });
-    </script>
-    <script src="Dar-mode.js"></script>
-    <!-- Sistema de comentarios -->
-    <script src="comments.js"></script>
-    <!-- Manejador de AdSense -->
-    <script src="adsense-handler.js"></script>
     
     <!-- JavaScript para el menú hamburguesa -->
     <script>
