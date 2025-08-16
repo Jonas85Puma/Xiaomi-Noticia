@@ -18,8 +18,10 @@
     <noscript><link rel="stylesheet" href="Style.min.css"></noscript>
     
     <!-- AdSense - Async -->
-    <!-- AdSense Optimizado - Carga Condicional -->
-    <link rel="stylesheet" href="adsense-optimization.css">
+    <!-- AdSense Optimizado - CSS Crítico Inline -->
+    <style>.adsense-container,.ads-left,.ads-right,.adsense-left,.adsense-right{min-height:250px;display:flex;align-items:center;justify-content:center;background-color:#f8f9fa;border:1px solid #e9ecef;border-radius:4px;margin:10px 0;position:relative}.ad-failed{display:none!important}@media (max-width:768px){.adsense-container,.ads-left,.ads-right,.adsense-left,.adsense-right{min-height:200px;margin:8px 0}.ads-left,.ads-right,.adsense-left,.adsense-right{display:none}.ad-hidden-mobile{display:none!important}}</style>
+    <link rel="preload" href="adsense-optimization.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="adsense-optimization.css"></noscript>
     <script src="adsense-optimizer.js" defer></script>
 </head>
 <body>
