@@ -6,13 +6,13 @@ class CommentSystem {
         this.init();
     }
 
-    init() {
+    init = () => {
         this.createCommentSection();
         this.loadComments();
         this.bindEvents();
     }
 
-    createCommentSection() {
+    createCommentSection = () => {
         const commentSection = document.createElement('section');
         commentSection.id = 'comments-section';
         commentSection.innerHTML = `
@@ -54,15 +54,15 @@ class CommentSystem {
         }
     }
 
-    bindEvents() {
+    bindEvents = () => {
         const form = document.getElementById('comment-form');
-        form.addEventListener('submit', (e) => {
+        form?.addEventListener('submit', (e) => {
             e.preventDefault();
             this.addComment();
         });
     }
 
-    addComment() {
+    addComment = () => {
         const name = document.getElementById('comment-name').value.trim();
         const email = document.getElementById('comment-email').value.trim();
         const text = document.getElementById('comment-text').value.trim();
@@ -93,13 +93,13 @@ class CommentSystem {
         this.updateCommentCount();
     }
 
-    sanitizeInput(input) {
+    sanitizeInput = (input) => {
         const div = document.createElement('div');
         div.textContent = input;
         return div.innerHTML;
     }
 
-    saveComment(comment) {
+    saveComment = (comment) => {
         let comments = this.getComments();
         comments.unshift(comment); // Agregar al inicio
         
@@ -111,30 +111,48 @@ class CommentSystem {
         localStorage.setItem(this.storageKey, JSON.stringify(comments));
     }
 
-    getComments() {
+    getComments = () => {
         const stored = localStorage.getItem(this.storageKey);
         return stored ? JSON.parse(stored) : [];
     }
 
-    loadComments() {
+    loadComments = () => {
         const comments = this.getComments();
         const container = document.getElementById('comments-container');
         container.innerHTML = '';
 
         if (comments.length === 0) {
             container.innerHTML = '<p class="no-comments">Aún no hay comentarios. ¡Sé el primero en comentar!</p>';
-        } else {
-            comments.forEach(comment => {
-                if (comment.approved) {
-                    this.displayComment(comment, false);
-                }
-            });
+            this.updateCommentCount();
+            return;
         }
-        
-        this.updateCommentCount();
+
+        // Optimización: cargar comentarios en chunks para evitar bloquear el hilo principal
+        const approvedComments = comments.filter(comment => comment.approved);
+        this.loadCommentsInChunks(approvedComments, 0);
     }
 
-    displayComment(comment, prepend = true) {
+    // Cargar comentarios en chunks para optimizar el rendimiento
+    loadCommentsInChunks = (comments, startIndex, chunkSize = 5) => {
+        const endIndex = Math.min(startIndex + chunkSize, comments.length);
+        
+        // Procesar chunk actual
+        for (let i = startIndex; i < endIndex; i++) {
+            this.displayComment(comments[i], false);
+        }
+        
+        // Si hay más comentarios, programar el siguiente chunk
+        if (endIndex < comments.length) {
+            requestAnimationFrame(() => {
+                this.loadCommentsInChunks(comments, endIndex, chunkSize);
+            });
+        } else {
+            // Actualizar contador cuando termine de cargar todos
+            this.updateCommentCount();
+        }
+    }
+
+    displayComment = (comment, prepend = true) => {
         const container = document.getElementById('comments-container');
         const noComments = container.querySelector('.no-comments');
         if (noComments) {
@@ -160,7 +178,7 @@ class CommentSystem {
         }
     }
 
-    formatDate(timestamp) {
+    formatDate = (timestamp) => {
         const date = new Date(timestamp);
         return date.toLocaleDateString('es-ES', {
             year: 'numeric',
@@ -171,18 +189,19 @@ class CommentSystem {
         });
     }
 
-    clearForm() {
-        document.getElementById('comment-form').reset();
+    clearForm = () => {
+        document.getElementById('comment-form')?.reset();
     }
 
-    updateCommentCount() {
+    updateCommentCount = () => {
         const comments = this.getComments();
         const approvedComments = comments.filter(c => c.approved);
-        document.getElementById('comment-count').textContent = approvedComments.length;
+        const countElement = document.getElementById('comment-count');
+        if (countElement) countElement.textContent = approvedComments.length;
     }
 
     // Método para exportar comentarios (para respaldo)
-    exportComments() {
+    exportComments = () => {
         const comments = this.getComments();
         const dataStr = JSON.stringify(comments, null, 2);
         const dataBlob = new Blob([dataStr], {type: 'application/json'});
@@ -194,7 +213,7 @@ class CommentSystem {
     }
 
     // Método para importar comentarios
-    importComments(jsonData) {
+    importComments = (jsonData) => {
         try {
             const comments = JSON.parse(jsonData);
             localStorage.setItem(this.storageKey, JSON.stringify(comments));
@@ -207,7 +226,7 @@ class CommentSystem {
 }
 
 // Inicializar sistema de comentarios cuando el DOM esté listo
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
     // Obtener ID de página basado en la URL o nombre del archivo
     const pageId = window.location.pathname.split('/').pop().replace('.html', '') || 'index';
     window.commentSystem = new CommentSystem(pageId);
