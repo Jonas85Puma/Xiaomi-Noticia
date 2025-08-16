@@ -1,0 +1,2 @@
+/* CSS Crítico para AdSense - Previene CLS */
+.adsense-container,.ads-left,.ads-right,.adsense-left,.adsense-right{min-height:250px;display:flex;align-items:center;justify-content:center;background-color:#f8f9fa;border:1px solid #e9ecef;border-radius:4px;margin:10px 0;position:relative}.ad-failed{display:none!important}@media (max-width:768px){.adsense-container,.ads-left,.ads-right,.adsense-left,.adsense-right{min-height:200px;margin:8px 0}.ads-left,.ads-right,.adsense-left,.adsense-right{display:none}.ad-hidden-mobile{display:none!important}}
