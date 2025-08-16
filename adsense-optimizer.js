@@ -13,18 +13,34 @@
         delayBeforeLoad: 1000 // Retrasar carga inicial
     };
     
-    // Detectar dispositivo y conexión
-    const deviceInfo = {
-        isMobile: window.innerWidth <= config.mobileBreakpoint,
-        isSlowConnection: navigator.connection && 
-            (navigator.connection.effectiveType === 'slow-2g' || 
-             navigator.connection.effectiveType === '2g' ||
-             navigator.connection.saveData),
-        reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    };
+    // Detectar dispositivo y conexión - Optimizado para evitar reflows
+    let deviceInfo = {};
     
-    // Determinar si cargar anuncios
-    const shouldOptimizeAds = deviceInfo.isMobile || deviceInfo.isSlowConnection;
+    // Función para detectar dispositivo sin causar reflow
+    function detectDevice() {
+        // Usar requestAnimationFrame para leer dimensiones de forma eficiente
+        requestAnimationFrame(() => {
+            deviceInfo = {
+                isMobile: window.innerWidth <= config.mobileBreakpoint,
+                isSlowConnection: navigator.connection && 
+                    (navigator.connection.effectiveType === 'slow-2g' || 
+                     navigator.connection.effectiveType === '2g' ||
+                     navigator.connection.saveData),
+                reducedMotion: window.matchMedia('(prefers-reduced-motion: reduce)').matches
+            };
+            
+            // Continuar con la inicialización después de detectar el dispositivo
+            initializeAdsOptimization();
+        });
+    }
+    
+    // Detectar dispositivo de forma optimizada
+    detectDevice();
+    
+    // Función principal de inicialización
+    function initializeAdsOptimization() {
+        // Determinar si cargar anuncios
+        const shouldOptimizeAds = deviceInfo.isMobile || deviceInfo.isSlowConnection;
     
     // Intersection Observer para carga lazy
     let adObserver;
@@ -166,5 +182,7 @@
             deviceInfo
         };
     };
+    
+    } // Fin de initializeAdsOptimization
     
 })();
