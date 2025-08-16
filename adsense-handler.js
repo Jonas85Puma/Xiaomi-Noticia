@@ -89,20 +89,30 @@
         const adElements = document.querySelectorAll('.adsbygoogle');
         let isValid = true;
         
+        // Validar elementos .adsbygoogle (anuncios manuales)
         adElements.forEach(function(adElement, index) {
             const clientId = adElement.getAttribute('data-ad-client');
             const slotId = adElement.getAttribute('data-ad-slot');
             
             if (!clientId || clientId === 'ca-pub-XXXXXXXXXX') {
-                console.warn(`⚠️ Anuncio ${index + 1}: data-ad-client no configurado o usando valor de ejemplo`);
+                console.warn(`⚠️ Anuncio manual ${index + 1}: data-ad-client no configurado o usando valor de ejemplo`);
                 isValid = false;
             }
             
             if (!slotId || slotId === 'XXXXXXXXXX') {
-                console.warn(`⚠️ Anuncio ${index + 1}: data-ad-slot no configurado o usando valor de ejemplo`);
+                console.warn(`⚠️ Anuncio manual ${index + 1}: data-ad-slot no configurado o usando valor de ejemplo`);
                 isValid = false;
             }
         });
+        
+        // Verificar que Auto Ads esté configurado correctamente
+        const autoAdsScript = document.querySelector('script[src*="adsbygoogle.js"]');
+        if (autoAdsScript) {
+            console.log('✅ Auto Ads configurado correctamente - Google mostrará anuncios automáticamente');
+        } else {
+            console.warn('⚠️ Script de Auto Ads no encontrado');
+            isValid = false;
+        }
         
         if (isValid) {
             console.log('✅ Configuración de AdSense válida');
