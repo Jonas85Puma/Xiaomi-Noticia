@@ -1,0 +1,158 @@
+/* Optimizaciones de AdSense para mejorar rendimiento móvil */
+/* Reduce CLS y mejora la experiencia de usuario */
+
+/* Contenedores de anuncios - Reservar espacio para evitar CLS */
+.adsense-container,
+.ads-left,
+.ads-right,
+.adsense-left,
+.adsense-right {
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f8f9fa;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin: 10px 0;
+    transition: opacity 0.3s ease;
+    position: relative;
+}
+
+/* Estados de carga de anuncios */
+.ad-loading {
+    opacity: 0.7;
+}
+
+.ad-loading::before {
+    content: "Cargando anuncio...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #6c757d;
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.ad-loaded {
+    background-color: transparent;
+    border: none;
+    min-height: auto;
+}
+
+.ad-failed {
+    display: none !important;
+}
+
+/* Optimizaciones para móvil */
+@media (max-width: 768px) {
+    .adsense-container,
+    .ads-left,
+    .ads-right,
+    .adsense-left,
+    .adsense-right {
+        min-height: 200px;
+        margin: 8px 0;
+    }
+    
+    /* Ocultar anuncios laterales en móvil para mejorar rendimiento */
+    .ads-left,
+    .ads-right,
+    .adsense-left,
+    .adsense-right {
+        display: none;
+    }
+    
+    /* Limitar anuncios visibles en móvil */
+    .ad-hidden-mobile {
+        display: none !important;
+    }
+}
+
+/* Optimizaciones para conexiones lentas */
+@media (prefers-reduced-data: reduce) {
+    .adsense-container,
+    .ads-left,
+    .ads-right,
+    .adsense-left,
+    .adsense-right {
+        display: none !important;
+    }
+}
+
+/* Modo oscuro para contenedores de anuncios */
+.dark-mode .adsense-container,
+.dark-mode .ads-left,
+.dark-mode .ads-right,
+.dark-mode .adsense-left,
+.dark-mode .adsense-right {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: #e2e8f0;
+}
+
+.dark-mode .ad-loading::before {
+    color: #a0aec0;
+}
+
+/* Animaciones suaves para carga de anuncios */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ad-loaded .adsbygoogle {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Optimización para impresión */
+@media print {
+    .adsense-container,
+    .ads-left,
+    .ads-right,
+    .adsense-left,
+    .adsense-right {
+        display: none !important;
+    }
+}
+
+/* Mejoras de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .adsense-container,
+    .ads-left,
+    .ads-right,
+    .adsense-left,
+    .adsense-right {
+        transition: none;
+    }
+    
+    .ad-loaded .adsbygoogle {
+        animation: none;
+    }
+}
+
+/* Contenedor responsive para anuncios */
+.ad-responsive {
+    width: 100%;
+    max-width: 728px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .ad-responsive {
+        max-width: 320px;
+    }
+}
+
+@media (max-width: 480px) {
+    .ad-responsive {
+        max-width: 300px;
+    }
+}
