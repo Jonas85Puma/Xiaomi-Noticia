@@ -1811,10 +1811,10 @@ body.dark-mode #toggle-dark-mode:hover {
         font-size: 0.9rem;
     }
     section p, section ul li {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     table th, table td {
-        font-size: 0.8rem; /* Ajusta el tamaño de la fuente en las tablas */
+        font-size: 0.85rem; /* Ajusta el tamaño de la fuente en las tablas */
     }
     
     .nav-container {
@@ -1864,13 +1864,13 @@ body.dark-mode #toggle-dark-mode:hover {
 
     footer {
         padding: 8px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     #toggle-dark-mode {
         bottom: 12px;
         right: 12px;
         padding: 6px 12px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     header h1 {
         font-size: 1.25rem;
@@ -1901,10 +1901,10 @@ body.dark-mode #toggle-dark-mode:hover {
         font-size: 0.75rem;
     }
     section p, section ul li {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
     table th, table td {
-        font-size: 0.7rem; /* Ajusta el tamaño de la fuente en las tablas */
+        font-size: 0.75rem; /* Ajusta el tamaño de la fuente en las tablas */
     }
 }
 
@@ -2196,11 +2196,11 @@ table td:last-child {
     table th, table td {
         padding: 0.8rem 0.4rem;
         min-width: 100px;
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
     
     table th {
-        font-size: 0.8rem;
+        font-size: 0.85rem;
     }
 }
 
@@ -2215,11 +2215,11 @@ table td:last-child {
     table th, table td {
         padding: 0.5rem 0.3rem;
         min-width: 80px;
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
     
     table th {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
     
     section {
@@ -2230,7 +2230,7 @@ table td:last-child {
 
 @media (max-width: 576px) {
     table {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
         display: block;
         overflow-x: auto;
         white-space: nowrap;
@@ -2384,6 +2384,8 @@ main {
         margin: auto; /* Elimina el margen en pantallas pequeñas */
     }
 }
+
+
 
 
 
