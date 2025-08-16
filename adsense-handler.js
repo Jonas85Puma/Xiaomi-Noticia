@@ -1,8 +1,42 @@
-// Script moderno para manejar la visibilidad de contenedores AdSense
-// Este script se asegura de que los contenedores solo se muestren cuando hay anuncios reales
+// Script optimizado para manejar AdSense con carga condicional
+// Reduce el JavaScript no utilizado y mejora el rendimiento móvil
 
 (() => {
     'use strict';
+    
+    // Configuración de optimización móvil
+    const isMobile = window.innerWidth <= 768;
+    const isSlowConnection = navigator.connection && 
+        (navigator.connection.effectiveType === 'slow-2g' || 
+         navigator.connection.effectiveType === '2g' ||
+         navigator.connection.saveData);
+    
+    // Solo cargar AdSense si no es móvil con conexión lenta
+    const shouldLoadAds = !isMobile || !isSlowConnection;
+    
+    // Función para cargar AdSense de forma lazy
+    const loadAdSenseScript = () => {
+        return new Promise((resolve, reject) => {
+            if (document.querySelector('script[src*="adsbygoogle.js"]')) {
+                resolve();
+                return;
+            }
+            
+            const script = document.createElement('script');
+            script.src = 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+            script.async = true;
+            script.crossOrigin = 'anonymous';
+            script.onload = resolve;
+            script.onerror = reject;
+            
+            // Cargar solo cuando sea necesario
+            if (shouldLoadAds) {
+                document.head.appendChild(script);
+            } else {
+                resolve(); // Resolver sin cargar en conexiones lentas
+            }
+        });
+    };
     
     // Función para verificar si un anuncio está cargado
     const checkAdStatus = (adElement) => {
@@ -197,23 +231,46 @@
         };
     };
     
-    // Función principal de inicialización
-    const initAdSenseHandler = () => {
-        console.log('🚀 Inicializando manejador de AdSense...');
+    // Función principal de inicialización optimizada
+    const initAdSenseHandler = async () => {
+        console.log('🚀 Inicializando manejador de AdSense optimizado...');
         
-        // Verificar disponibilidad de AdSense
-        checkAdSenseAvailability();
+        // Verificar si debemos cargar AdSense
+        if (!shouldLoadAds) {
+            console.log('⚡ AdSense omitido para optimizar rendimiento móvil');
+            // Ocultar todos los contenedores de anuncios en conexiones lentas
+            const adContainers = document.querySelectorAll('.adsense-container, .ads-left, .ads-right, .adsense-left, .adsense-right');
+            adContainers.forEach(container => {
+                container.style.display = 'none';
+            });
+            return;
+        }
         
-        // Validar configuración
-        validateAdSenseConfig();
-        
-        // Observar cambios en anuncios
-        observeAds();
-        
-        // Ocultar contenedores vacíos después de un tiempo
-        hideEmptyContainers();
-        
-        console.log('✅ Manejador de AdSense inicializado');
+        try {
+            // Cargar AdSense de forma lazy
+            await loadAdSenseScript();
+            
+            // Verificar disponibilidad de AdSense
+            checkAdSenseAvailability();
+            
+            // Validar configuración
+            validateAdSenseConfig();
+            
+            // Observar cambios en anuncios
+            observeAds();
+            
+            // Ocultar contenedores vacíos después de un tiempo
+            hideEmptyContainers();
+            
+            console.log('✅ Manejador de AdSense inicializado');
+        } catch (error) {
+            console.warn('⚠️ Error cargando AdSense:', error);
+            // Ocultar contenedores si hay error
+            const adContainers = document.querySelectorAll('.adsense-container, .ads-left, .ads-right, .adsense-left, .adsense-right');
+            adContainers.forEach(container => {
+                container.style.display = 'none';
+            });
+        }
     };
     
     // Inicializar cuando el DOM esté listo
