@@ -19,8 +19,8 @@
     </style>
     
     <!-- CSS No Crítico - Carga Asíncrona -->
-    <link rel="preload" href="Style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="Style.css"></noscript>
+    <link rel="preload" href="Style.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="Style.min.css"></noscript>
     
     <!-- DataTables CSS - Carga Diferida -->
     <link rel="preload" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -76,7 +76,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14</p>
-                                        <img src="IMG/Xiaomi 14.png" alt="Xiaomi 14" loading="lazy" decoding="async">
+                                        <img src="IMG/Xiaomi 14.png" alt="Xiaomi 14" loading="lazy" decoding="async" width="200" height="200" sizes="(max-width: 768px) 150px, 200px">
                                     </div>
                                 </a>
                             </li>
@@ -84,7 +84,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14-ultra/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14 Ultra</p>
-                                        <img src="IMG/Xiaomi 14 ultra.png" alt="Xiaomi 14 Ultra" loading="lazy" decoding="async">
+                                        <img src="IMG/Xiaomi 14 ultra.png" alt="Xiaomi 14 Ultra" loading="lazy" decoding="async" width="200" height="200" sizes="(max-width: 768px) 150px, 200px">
                                     </div>
                                 </a>
                             </li>
@@ -92,7 +92,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14t/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14T</p>
-                                        <img src="IMG/Xiaomi 14T.jpg" alt="Xiaomi 14T" loading="lazy" decoding="async">
+                                        <img src="IMG/Xiaomi 14T.jpg" alt="Xiaomi 14T" loading="lazy" decoding="async" width="200" height="200" sizes="(max-width: 768px) 150px, 200px">
                                     </div>
                                 </a>
                             </li>
@@ -100,7 +100,7 @@
                                 <a href="https://www.mi.com/global/product/xiaomi-14t-pro/" target="_blank">
                                     <div class="device">
                                         <p>Xiaomi 14T Pro</p>
-                                        <img src="IMG/Xiaomi 14T pro.png" alt="Xiaomi 14T Pro" loading="lazy" decoding="async">
+                                        <img src="IMG/Xiaomi 14T pro.png" alt="Xiaomi 14T Pro" loading="lazy" decoding="async" width="200" height="200" sizes="(max-width: 768px) 150px, 200px">
                                     </div>
                                 </a>
                             </li>
@@ -604,11 +604,7 @@
         </div>
         <button id="toggle-dark-mode">Modo noche / Día</button>
     </footer>
-    <!-- Scripts de AdSense ya cargados en el head -->
-    <!-- Scripts optimizados con defer/async -->
-    <script defer src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script defer src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+    <!-- Scripts optimizados - solo los necesarios -->
     <script defer src="Dar-mode.js"></script>
     <script defer src="comments.js"></script>
     <script defer src="adsense-handler.js"></script>
@@ -680,5 +676,6 @@
     </script>
 </body>
 </html>
+
 
 
